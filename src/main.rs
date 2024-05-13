@@ -12,10 +12,6 @@ use num::{
 };
 use serde::{Deserialize, Serialize};
 
-//const ITERATIONS: usize = 200;
-//const BOUND: f64 = 2.0;
-//const THREADS: usize = 4;
-
 const CONFIG_FILE_PATH: &str = "config.toml";
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -110,24 +106,7 @@ fn main() -> anyhow::Result<()> {
             config
         }
     };
-    /*
 
-    let grid = Grid {
-        re_min: -1.45,
-        im_min: -0.9,
-        re_max: 0.45,
-        im_max: 0.9,
-        delta: 0.0005,
-    };
-
-       let grid = Grid {
-           re_min: -0.8,
-           re_max: -0.76,
-           im_min: 0.11,
-           im_max: 0.14,
-           delta: 0.00001,
-       };
-    */
     let mut grid_data: Vec<Point> = vec![];
 
     // fill grid_data vector
