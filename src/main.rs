@@ -77,7 +77,7 @@ fn mandelbrot_result(mut point: Point, config: &Config) -> Point {
     point
 }
 
-pub fn write_config_to_file(config: &Config) -> anyhow::Result<()> {
+fn write_config_to_file(config: &Config) -> anyhow::Result<()> {
     let text = toml::to_string(config)?;
     let mut file = File::create(CONFIG_FILE_PATH)?;
 
@@ -85,7 +85,7 @@ pub fn write_config_to_file(config: &Config) -> anyhow::Result<()> {
     Ok(())
 }
 
-pub fn read_config_from_file() -> anyhow::Result<Config> {
+fn read_config_from_file() -> anyhow::Result<Config> {
     let mut file = File::open(CONFIG_FILE_PATH)?;
 
     let mut contents = String::new();
